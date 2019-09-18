@@ -52,7 +52,7 @@ $(".crystal").on('click', function (){
         
     }
 
-    startGame();
+    
 
 });
 
