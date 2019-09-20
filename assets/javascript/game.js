@@ -13,6 +13,8 @@ var lost = 0;
 var win = 0;
 var previous = 0;
 
+var resetAndStart = function () {
+
 
 
 
@@ -36,19 +38,38 @@ for(var i = 0; i < 4; i++){
     crystal.html(random);
   
     $(".crystals").append(crystal);
+}
     
 }
 
-$(".crystal").on('click', function (){
+resetAndStart();
+
+
+$(document).on('click', ".crystal", function () {
     
     var num = parseInt($(this).attr('data-random'));
 
     previous += num;
 
+    console.log(previous);
+
     if(previous > random_result){
         lost--;
+
+        $("#lost").html(lost);
+
+        previous = 0;
+
+        resetAndStart();
+
     }else if(previous === random_result){
         win++;
+
+        $("#win").html(win);
+
+        previous = 0;
+
+        resetAndStart();
         
     }
 
