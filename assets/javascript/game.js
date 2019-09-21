@@ -15,10 +15,16 @@ var previous = 0;
 
 var resetAndStart = function () {
 
+$(".crystals").empty();
 
+var images = {
+    '',
+    '',
+    '',
+    '',
+};
 
-
-$(".crystal").attr('class');
+}
 
 
 random_result = Math.floor(Math.random() * 69) + 30;
@@ -38,6 +44,8 @@ for(var i = 0; i < 4; i++){
     crystal.html(random);
   
     $(".crystals").append(crystal);
+
+    $("#previous").html("Total Score: ", previous);
 }
     
 }
@@ -51,12 +59,14 @@ $(document).on('click', ".crystal", function () {
 
     previous += num;
 
+    $("#previous").html("Total Score: ", previous);
+
     console.log(previous);
 
     if(previous > random_result){
         lost--;
 
-        $("#lost").html(lost);
+        $("#lost").html("YOU LOST!:" ,lost);
 
         previous = 0;
 
@@ -65,7 +75,7 @@ $(document).on('click', ".crystal", function () {
     }else if(previous === random_result){
         win++;
 
-        $("#win").html(win);
+        $("#win").html("YOU WIN!", win);
 
         previous = 0;
 
