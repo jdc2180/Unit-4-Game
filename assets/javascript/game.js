@@ -1,15 +1,13 @@
 $(document).ready(function() {
 
-	// ******* NUMBER ARRAYS *******
-
-	// random computer variable array
+	
 	var rand = [];
 
 	for (var r = 19; r < 121; r++) {
 		rand.push(r);
 	}
 
-	// crystal numbers array
+	
 	var crystals = [];
 
 	for (var c = 1; c < 13; c++) {
@@ -17,13 +15,13 @@ $(document).ready(function() {
 		crystals.push(c);
 	}
 
-	// console.log(crystals);
+
 
 	// ******* GLOBAL VARIABLES *******
 
 	// random variables selected by computer
-	var randNumber; // number to match
-	var crystalNumbers = []; // for array of random crystal values
+	var randNumber; 
+	var crystalNumbers = []; 
 
 	var c1;
 	var c2;
@@ -35,9 +33,7 @@ $(document).ready(function() {
 	var wins = 0;
 	var losses = 0;
 
-	// ******* FUNCTIONS *******
-
-	// pick a random number
+		
 	function pickRandomNumber(arr) {
 
 		var x = arr[Math.floor(Math.random() * arr.length)];
@@ -95,8 +91,8 @@ $(document).ready(function() {
 
 	// *** GAME SETTINGS AT START ***
 
-	pickRandomNumber(rand); // random number to match
-	pickRandomCrystals(crystals); // array of random crystal values
+	pickRandomNumber(rand); 
+	pickRandomCrystals(crystals); 
 	crystalValues(crystalNumbers);
 
 		// crystal button functions
@@ -126,7 +122,7 @@ $(document).ready(function() {
 		});
 
 	$("button").on("click", function() {
-		// this is what happens if the user wins
+		// if the user wins
 		if (totalScore == randNumber) {
 
 			wins++;
